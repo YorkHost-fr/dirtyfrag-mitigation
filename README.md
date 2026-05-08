@@ -42,16 +42,16 @@ Aucune dépendance hors coreutils + `kmod` (`lsmod`, `modprobe`, `rmmod`) déjà
 
 ```bash
 # Statut courant — n'écrit rien
-sudo ./dirtyfrag-mitigate.sh --check
+bash <(curl -fsSL https://raw.githubusercontent.com/YorkHost-fr/dirtyfrag-mitigation/main/dirtyfrag-mitigation.sh) --check
 
 # Application locale (avec garde-fou IPSec)
-sudo ./dirtyfrag-mitigate.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/YorkHost-fr/dirtyfrag-mitigation/main/dirtyfrag-mitigation.sh)
 
 # Déploiement sur un cluster Proxmox
 ./dirtyfrag-mitigate.sh --cluster "pve1 pve2 pve3 pve4 pve5 pve6"
 
 # Bypass du check IPSec (à n'utiliser qu'en dernier recours)
-sudo ./dirtyfrag-mitigate.sh --force
+bash <(curl -fsSL https://raw.githubusercontent.com/YorkHost-fr/dirtyfrag-mitigation/main/dirtyfrag-mitigation.sh) --force
 
 # Rollback (uniquement APRÈS installation du kernel patché)
 sudo ./dirtyfrag-mitigate.sh --rollback
